@@ -1,20 +1,13 @@
 /*
- * A very simple AMD module with no dependencies
- */
+* A very simple AMD module with no dependencies
+*/
 
-define([
-    'intern!object',
-    'intern/chai!assert',
-    'app/hello'
-], function (registerSuite, assert, hello) {
-    registerSuite({
-        name: 'hello',
+define([], function () {
+	return {
+		greet: function (name) {
+			name = name || 'world';
 
-        greet: function () {
-            assert.strictEqual(hello.greet('Murray'), 'Hello, Murray!',
-                'hello.greet should return a greeting for the person named in the first argument');
-            assert.strictEqual(hello.greet(), 'Hello, world!',
-                'hello.greet with no arguments should return a greeting to "world"');
-        }
-    });
+			return 'Hello, ' + name + '!';
+		}
+	};
 });
