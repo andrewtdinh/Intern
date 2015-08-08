@@ -36,7 +36,8 @@ define({
 	maxConcurrency: 3,
 
 	// Name of the tunnel class to use for WebDriver tests
-	tunnel: 'SauceLabsTunnel',
+	// tunnel: 'SauceLabsTunnel',
+	tunnel: 'NullTunnel',
 
 	// The desired AMD loader to use when running unit tests (client.html/client.js). Omit to use the default Dojo
 	// loader
