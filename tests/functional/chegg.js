@@ -3,13 +3,12 @@ define(function (require) {
   var assert = require('intern/chai!assert');
 
   registerSuite({
-    name: 'index',
+    name: 'chegg',
 
     'greeting form': function () {
       return this.remote
-        .get(require.toUrl('http://www.chegg.com'))
+        .get(require.toUrl('http://chegg.com'))
         .setFindTimeout(7000)
-        .findByCssSelector('body.loaded')
         .findById('autosuggest-input')
         .click()
         .type('Selenium')
