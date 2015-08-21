@@ -12,9 +12,16 @@ define(function (require) {
         .findById('autosuggest-input')
         .click()
         .type('Selenium')
+        .submit()
         .end()
-        .findByCssSelector('a.autosuggest-search-btn')
-        .click()
+        .findAllByTagName('a')
+        .then(function (results){
+          results.forEach(function (result){
+            result.click();
+          })
+        })
+        // .findByCssSelector('a.autosuggest-search-btn')
+        // .click()
         // .end()
         // .findById('greeting')
         // .getVisibleText()
